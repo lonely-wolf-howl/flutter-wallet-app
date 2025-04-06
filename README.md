@@ -1,4 +1,4 @@
-# nomad_wallet
+# wallet
 
 A new Flutter project.
 
