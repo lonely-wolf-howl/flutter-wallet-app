@@ -40,33 +40,33 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 80),
-              UserGreeting(),
-              SizedBox(height: 120),
-              BalanceDisplay(),
-              SizedBox(height: 20),
+              const SizedBox(height: 40),
+              const UserGreeting(),
+              const SizedBox(height: 60),
+              const BalanceDisplay(),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   ActionButton(
                     text: 'Transfer',
-                    backgroundColor: Color(0xFFF1B33B),
+                    backgroundColor: const Color(0xFFF1B33B),
                   ),
                   ActionButton(
                     text: 'Request',
-                    backgroundColor: Color(0xFF1F2123),
+                    backgroundColor: const Color(0xFF1F2123),
                     textColor: Colors.white,
                   ),
                 ],
               ),
-              WalletSection(),
+              const WalletSection(),
             ],
           ),
         ),
