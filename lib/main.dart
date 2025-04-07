@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'widgets/action_button.dart';
 import 'widgets/user_greeting.dart';
 import 'widgets/balance_display.dart';
+import 'widgets/wallet_section.dart';
 
 void main() {
   runApp(const App());
@@ -65,6 +66,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ],
               ),
+              WalletSection(),
             ],
           ),
         ),
