@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'widgets/action_button.dart';
+import 'widgets/user_greeting.dart';
+import 'widgets/balance_display.dart';
 
 void main() {
   runApp(const App());
@@ -46,74 +49,24 @@ class HomeScreen extends StatelessWidget {
               SizedBox(height: 80),
               UserGreeting(),
               SizedBox(height: 120),
-              Text(
-                'Total Balance',
-                style: TextStyle(color: Colors.white70, fontSize: 20),
-              ),
-              SizedBox(height: 5),
-              Text(
-                '\$5 194 482',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 45,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+              BalanceDisplay(),
               SizedBox(height: 20),
-              TransferButton(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ActionButton(
+                    text: 'Transfer',
+                    backgroundColor: Color(0xFFF1B33B),
+                  ),
+                  ActionButton(
+                    text: 'Request',
+                    backgroundColor: Color(0xFF1F2123),
+                    textColor: Colors.white,
+                  ),
+                ],
+              ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class UserGreeting extends StatelessWidget {
-  const UserGreeting({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            Text(
-              'Hey, Jae Yong',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 35,
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-            Text(
-              'Welcome back',
-              style: TextStyle(color: Colors.white70, fontSize: 20),
-            ),
-          ],
-        ),
-      ],
-    );
-  }
-}
-
-class TransferButton extends StatelessWidget {
-  const TransferButton({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFFF1B33B),
-        borderRadius: BorderRadius.circular(45),
-      ),
-      child: const Padding(
-        padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
-        child: Text(
-          'Transfer',
-          style: TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
         ),
       ),
     );
